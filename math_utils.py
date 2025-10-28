@@ -94,3 +94,22 @@ def factors(number: int) -> list[int]:
         if number % index == 0:
             result.append(index)
     return result
+
+def prime_factor(number:int) -> list[int]:
+    """Return the list of prime factors of a given number.
+
+    Finds all factors of the provided number and filters them to include
+    only the factors that are prime numbers.
+
+    Args:
+        number (int): The number for which to find prime factors.
+
+    Returns:
+        list[int]: A list containing all prime factors of the given number.
+    """
+    all_factors = factors(number)
+    prime_factor_list = []
+    for f in all_factors:
+        if is_prime(f):
+            prime_factor_list.append(f)
+    return prime_factor_list
