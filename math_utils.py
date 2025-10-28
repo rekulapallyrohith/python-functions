@@ -55,3 +55,42 @@ def is_even(number: int) -> bool:
         bool: True if the number is even, otherwise False.
     """
     return number % 2 == 0
+
+def is_prime(number: int) -> bool:
+    """Check if a number is a prime number.
+
+    A prime number is a number greater than 1 that has no positive divisors 
+    other than 1 and itself.
+
+    Args:
+        number (int): The number to check for primality.
+
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+    if number < 2:
+        return False
+
+    for index in range(2, number):
+        if number % index == 0:
+            return False
+    return True
+
+
+def factors(number: int) -> list[int]:
+    """Return all factors of a given number.
+
+    A factor is a number that divides the given number exactly 
+    (without leaving a remainder).
+
+    Args:
+        number (int): The number for which to find factors.
+
+    Returns:
+        list[int]: A list of all factors of the number.
+    """
+    result = []
+    for index in range(1, number + 1):
+        if number % index == 0:
+            result.append(index)
+    return result
